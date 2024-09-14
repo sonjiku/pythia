@@ -15,6 +15,19 @@ IMHO best part about `pythia` is how modular it is! Pythia doesn't let you "gene
 
 ## Example usage
 ```
+#>python -m pythia evank -p
+
+=========
+AVAILABLE PRESETS
+---------
+1: presetFood
+2: presetClothing
+3: presetCustomDungeon
+4: presetCustomPotion
+5: presetHexCrawl
+=========
+
+
 #>python -m pythia evank -p presetCustomPotion
 
 Custom Potion Recipe: 
@@ -24,6 +37,11 @@ Color: Ultramarine
 Scent: Bitter
 Taste: Sulphur
 Texture: Frigid
+
+
+#>python -m pythia evank -p 1
+
+Food: Undercooked Orange
 ```
 
 
