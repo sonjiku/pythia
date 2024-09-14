@@ -10,12 +10,20 @@ IMHO best part about `pythia` is how modular it is! Pythia doesn't let you "gene
 1. Install Python
 1. Download and extract this repository.
 1. Open a command prompt on the directory of the project.
-1. Run `python __main__.py -h` to find out the options you can use
+1. Run `python -m pythia` to find out the options you can use
 
 
 ## Example usage
 ```
-python __main__.py --help
+#>python -m pythia evank -p presetCustomPotion
+
+Custom Potion Recipe: 
+Ingredients: 6 Last breath, 5 Killer’s hand, 2 Treasure, 5 Larkspur, 2 Witch hazel
+Potion of Spider tail
+Color: Ultramarine
+Scent: Bitter
+Taste: Sulphur
+Texture: Frigid
 ```
 
 
@@ -111,3 +119,7 @@ Because I enjoy wasting an amount of time from my life I do not want to disclose
 - You find it faster, simpler or easier to run a command than to use an online tool.
 - What you want doesn't exist. (Yet?)
 - Cause I made this for you. (And me.)
+
+> I run the example command and I didn't get the result stated.
+
+That's good.
