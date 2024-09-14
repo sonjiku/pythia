@@ -27,7 +27,7 @@ If you are not going to need random **things** often, and specifically **things*
 
 ### How do I go about doing this?
 Pythia is written in *Python*. Python is an easy to learn programming language but in all honesty you won't be doing any more programming throughout this process than a kid does making a drawing by filling in colouring books. Pythia is written in a way where it is very modular and easy to append to. Just follow this simple recipe:
-1. Make a copy of `tablesTemplate.py`.
+1. Make a copy of `template.py`.
 1. Rename the file to something better and easily memorable.
 1. Make your tables inside of the file by following the instructions.
 1. Double check everything.
@@ -42,7 +42,7 @@ Pythia is written in *Python*. Python is an easy to learn programming language b
 
 #### More info
 
-The `tablesTemplate.py` file contains comments explaining everything relevant to making your tables to to help you throughout the process. "Tables" in this context are just lists of stuff formatted in a specific way. Could be a list of songs, colors, tastes, movies, or some oracle or random tables from your favorite TTRPG. If you want to do the last thing, having a copy of the `.pdf` version of the book and using *ChatGPT* to transform the table that you copied into the format we need can be ridiculously faster than just writing every element of the list, one by one. More info in regards to that can be found on the `tablesTemplate.py` file.
+The `template.py` file contains comments explaining everything relevant to making your tables to to help you throughout the process. "Tables" in this context are just lists of stuff formatted in a specific way. Could be a list of songs, colors, tastes, movies, or some oracle or random tables from your favorite TTRPG. If you want to do the last thing, having a copy of the `.pdf` version of the book and using *ChatGPT* to transform the table that you copied into the format we need can be ridiculously faster than just writing every element of the list, one by one. More info in regards to that can be found on the `template.py` file.
 
 After you've made your **"tables"** it's time to make your ***"Table of Tables"***. This part is really important. Make sure there are no typos in the table names anywhere. If the program doesn't run as it you think it should, you most likely have made a spelling mistake somewhere, are missing a comma, parenthesis, quote or bracket.
 
@@ -51,7 +51,7 @@ Editing `__main__.py` could be ridiculously faster than the other file, dependin
 #### Advanced
 
 ### Tables that point to other tables
-If you follow the instructions in the `tablesTemplate.py` correctly, you should be able to make it so an element of a list points to another list. Due to the way pythia is written, if the element contains a string that matches the **key** of another "table" in your "table of tables", then `pythia` will fetch a random element from that table.
+If you follow the instructions in the `template.py` correctly, you should be able to make it so an element of a list points to another list. Due to the way pythia is written, if the element contains a string that matches the **key** of another "table" in your "table of tables", then `pythia` will fetch a random element from that table.
 This can happen an indefinite amount of times and there are no protections to prevent pythia from going into an infinite recursive loop. This will leave her very confused. For your sake, I hope she doesn't get mad at you and lash out on any other programs in memory, though it is unlikely for that to happen.
 ### Presets
 Using the previous bit of knowledge, we can create "Presets". For an example you could try running `python __main__.py spyt --preset potionseller` or `python __main__.py spyt --preset character`.
