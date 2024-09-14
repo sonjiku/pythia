@@ -1,5 +1,4 @@
 # Pythia
-4.1 and 4.3 should not work but do for some reason. Fixing this behaviour will probably have bad consequences with a lot of cleanup that I'm not really looking forward to
 
 ## Oracle and Random Generator
 **Pythia** is a cli tool that you can use to randomly generate ***stuff*** fast. What kind of stuff can you generate? Pretty much anything.
