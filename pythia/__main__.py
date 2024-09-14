@@ -9,16 +9,25 @@ except ImportError:
     from pythia.tables import badevank as evank  # noqa # pylint: disable=unused-import
 from pythia import util  # noqa # pylint: disable=unused-import
 
+###############################################################################
+# Change "evank" from the line below to the name of your tables file
+# from pythia.tables import template  # noqa # pylint: disable=unused-import
+###############################################################################
+
 
 # This is the part wher we start getting smexy
 def create_argument_parser():
-    """ Docstring """
+    """
+    You should create an argument parser here.
+    Copy the evank one and change only the dest variable to something else.
+    """
     # Description
     parser = argparse.ArgumentParser(
         description='Pythia: Generate or roll things from TTRPG Tables')
     subparsers = parser.add_subparsers(dest='subcommand')
 
-    # evank parser
+    # evank parser Beginning
+    ###########################################################################
     if evank.AllBookTables:
         parser_evank = subparsers.add_parser('evank',
                                              help='Evank Tables')
@@ -37,6 +46,8 @@ def create_argument_parser():
                                   nargs="?",
                                   help='Run specified preset. '
                                   + 'Prints all available presets by default.')
+    ###########################################################################
+    # evank parser End
 
     # Auto Print Help if no args passed
     if len(sys.argv) == 1:
@@ -48,11 +59,17 @@ def create_argument_parser():
 
 # Main Func
 def main():
-    """ Docstring """
+    """
+    Here, you should copy the "evank" case. Change "evank" to what you chose
+    your subcommand to be. Any reference to "evank" should be changed to your
+    table
+    """
     parser = create_argument_parser()
     args = parser.parse_args()
 
     match args.subcommand:
+        #######################################################################
+        # evank handler Beginning
         case "evank":
             # Tables arg handling
             if args.evank_tables is not None:
@@ -63,7 +80,7 @@ def main():
                     print("AVAILABLE TABLES")
                     print("---------")
                     print("0: Print all tables")
-                    util.print_table(evank.AllTrueTables)
+                    util.print_table(evank.AllBookTables)
                     print("=========")
                 else:
                     for table_name in args.evank_tables:
@@ -75,7 +92,7 @@ def main():
                         # Otherwise
                         else:
                             util.print_random_pick(evank.AllTables,
-                                                   evank.AllTrueTables,
+                                                   evank.AllBookTables,
                                                    table_name)
             # Presets Handling
             if args.evank_preset is not None:
@@ -89,6 +106,8 @@ def main():
                     util.print_random_pick(evank.AllTables,
                                             evank.AllPresets,
                                             args.evank_preset)
+        #######################################################################
+        # evank handler End
 
 
 if __name__ == "__main__":
