@@ -31,7 +31,7 @@ AVAILABLE PRESETS
 #>python -m pythia evank -p presetCustomPotion
 
 Custom Potion Recipe: 
-Ingredients: 6 Last breath, 5 Killer’s hand, 2 Treasure, 5 Larkspur, 2 Witch hazel
+Ingredients: 6 Last breath, 5 Killer’s hand, 5 Larkspur, 2 Witch hazel
 Potion of Spider tail
 Color: Ultramarine
 Scent: Bitter
