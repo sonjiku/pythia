@@ -1,85 +1,99 @@
 """ Utilities """
 import random
 import re
+from typing import Callable
+from typing import Any
+
+class MagicString:
+    def __init__(self, generator: Callable[[], str]) -> None:
+        self.generator = generator
+
+    def get(self) -> str:
+        return self.generator()
+
+    def __repr__(self) -> str:
+        return self.get()  # Call the get method to return the string value
 
 
-def randomize_pick(master_table, tables_table, table_name):
-    """
-    eg.
-    food = access_random_key(AllEvankTables, TableEvankFood)
-    """
+def dice_roll (diesides: int, amount: int=1, crits: bool=False) ->int:
+    result: int = 0 
+    if crits is True:
+        critroll = random.randint(1,20)
+        if critroll == 1 :
+            amount = max(1, int(amount/2))
+        elif critroll == 20:
+            amount = int(amount*2)
 
+    for _ in range(amount):
+        result = result + random.randint(1,diesides)
+    return result
+    
+def randomize_pick(master_table: dict[str,list[Any]],
+                   list_name: str) ->str:
     # Access the dictionary by name
-    if table_name in tables_table:
-        current_dict = tables_table[table_name]
-        table_type = current_dict[0]
+    if list_name in master_table:
+        current_list = master_table[list_name]
     else:
-        return f"Table '{table_name}' not found.", "Error"
-    valid_keys = [key for key in current_dict.keys() if key > 0]
-    random_key = random.choice(valid_keys)  # Ensure no key is 0
-    random_value = current_dict[random_key]
-
-    # print(f"Accessed {tableName}[{randomKey}]") # debug
+        return f"List '{list_name}' not found."
+    random_element = str(random.choice(current_list))
 
     # Check if the value is another dictionary,
     # if so, call the function recursively.
     for possible_ref in master_table.keys():
-        if possible_ref in random_value:
+        while possible_ref in random_element:
             # Access the referenced dictionary
-            referenced_value, _ = randomize_pick(master_table, master_table, possible_ref)
-            random_value = re.sub(possible_ref,
-                                  f"{referenced_value}",
-                                  random_value)
-
-    return random_value, table_type
+            referenced_value = randomize_pick(master_table, possible_ref)
+            random_element = re.sub(possible_ref, f"{referenced_value}",
+                                    random_element, 1)
+    return random_element
 
 
-def print_table(tables_table):
+def print_table(master_table: dict[str, Any]):
     """ haha """
     i = 1
-    for table_name in tables_table:
+    for table_name in master_table:
         print(f"{i}: {table_name}")
         i = i+1
 
 
-def print_random_pick_noindexcheck(master_table, tables_table, table_name):
+def print_random_pick(master_table: dict[str,list[Any]],
+                      list_name: str) ->None:
     """ haha """
-    table_element, value_type = randomize_pick(master_table,
-                                               tables_table,
-                                               table_name)
-    print(f"{value_type}: {table_element}")
+    table_element = randomize_pick(master_table, list_name)
+    print(f"{list_name}: {table_element}")
     print("---------")
 
 
-def print_random_pick(master_table, tables_table, table_name):
+def print_random_pick_indexcheck(master_table: dict[str,list[Any]],
+                                 primary_table:  dict[str,list[Any]],
+                                 list_name: Any) ->None:
     """ haha """
-    if table_name.isdigit():
-        index_p = int(table_name)
-        max_index = len(tables_table) + 1
+    if list_name.isdigit():
+        index_p = int(list_name)
+        max_index = len(primary_table) + 1
         if index_p in range(max_index):
             i = 1
-            for each_table in tables_table:
+            for each_table in primary_table:
                 if i == index_p:
-                    print_random_pick_noindexcheck(master_table, tables_table, each_table)
+                    print_random_pick(master_table, each_table)
                     break
                 i = i+1
         else:
-            print(f"{table_name} is out of range.")
+            print(f"{list_name} is out of range.")
             print("---------")
     else:
-        print_random_pick_noindexcheck(master_table, tables_table, table_name)
+        print_random_pick(master_table, list_name)
 
 
-def print_random_all(master_table, tables_table):
+def print_random_all(master_table: dict[str,list[Any]]):
     """ haha """
-    for table_name in tables_table:
-        print_random_pick(master_table, tables_table, table_name)
+    for list_name in master_table:
+        print_random_pick(master_table, list_name)
 
 
 # Helper function to find the name of the dictionary from its value
-def dict_name_from_value(tables_table, dictionary_value):
-    """ haha """
-    for name, dictionary in tables_table.items():
-        if dictionary is dictionary_value:
-            return name
+def dict_key_from_value(dict: dict[Any, Any], dict_value: Any) -> Any:
+    for key, value in dict.items():
+        if value is dict_value:
+            return key
     return None

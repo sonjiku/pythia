@@ -28,24 +28,25 @@ def create_argument_parser():
 
     # evank parser Beginning
     ###########################################################################
-    if evank.AllBookTables:
-        parser_evank = subparsers.add_parser('evank',
-                                             help='Evank Tables')
-        parser_evank.add_argument('-t',
-                                  '--tables',
-                                  metavar='TABLE',
-                                  dest='evank_tables',
-                                  nargs="*",
-                                  help='Run generator on specified tables.  '
-                                  + 'Prints all available tables by default.')
-        parser_evank.add_argument('-p',
-                                  '--preset',
-                                  metavar='PRESET',
-                                  dest='evank_preset',
-                                  const="",
-                                  nargs="?",
-                                  help='Run specified preset. '
-                                  + 'Prints all available presets by default.')
+    parser_evank = subparsers.add_parser('evank',
+                                        help='Evank Tables')
+    _ = parser_evank.add_argument('-t',
+                            '--tables',
+                            metavar='TABLE',
+                            dest='evank_tables',
+                            nargs="*",
+                            help='Run generator on specified tables.  '
+                            + 'Prints all available tables by default.')
+    _ = parser_evank.add_argument('-p',
+                            '--preset',
+                            metavar='PRESET',
+                            dest='evank_preset',
+                            const="",
+                            nargs="?",
+                            help='Run specified preset. '
+                            + 'Prints all available presets by default.')
+
+
     ###########################################################################
     # evank parser End
 
@@ -80,34 +81,35 @@ def main():
                     print("AVAILABLE TABLES")
                     print("---------")
                     print("0: Print all tables")
-                    util.print_table(evank.AllBookTables)
+                    util.print_table(evank.TABLES)
                     print("=========")
                 else:
                     for table_name in args.evank_tables:
                         # If a table was provided check if it a request to
                         # generate from all available tables
                         if table_name in ("all", "0"):
-                            util.print_random_all(evank.AllTables,
-                                                  evank.AllBookTables)
+                            util.print_random_all(evank.masterTable)
                         # Otherwise
                         else:
-                            util.print_random_pick(evank.AllTables,
-                                                   evank.AllBookTables,
-                                                   table_name)
+                            util.print_random_pick_indexcheck(evank.masterTable,
+                                                              evank.TABLES,
+                                                              table_name)
             # Presets Handling
             if args.evank_preset is not None:
                 if args.evank_preset == "":
                     print("=========")
                     print("AVAILABLE PRESETS")
                     print("---------")
-                    util.print_table(evank.AllPresets)
+                    util.print_table(evank.PRESETS)
                     print("=========")
                 else:
-                    util.print_random_pick(evank.AllTables,
-                                            evank.AllPresets,
-                                            args.evank_preset)
+                    util.print_random_pick_indexcheck(evank.masterTable,
+                                                      evank.PRESETS,
+                                                      args.evank_preset)
         #######################################################################
         # evank handler End
+        case _:
+            parser.print_help()
 
 
 if __name__ == "__main__":
