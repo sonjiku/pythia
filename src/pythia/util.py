@@ -15,14 +15,14 @@ class MagicString:
         return self.get()  # Call the get method to return the string value
 
 
-def dice_roll (diesides: int, amount: int=1, crits: bool=False) ->int:
+def dice_roll (diesides: int, amount: int=1, crits: bool=False, crit_weight: int = 2) ->int:
     result: int = 0 
     if crits is True:
         critroll = random.randint(1,20)
         if critroll == 1 :
-            amount = max(1, int(amount/2))
+            amount = max(1, int(amount/crit_weight))
         elif critroll == 20:
-            amount = int(amount*2)
+            amount = int(amount*crit_weight)
 
     for _ in range(amount):
         result = result + random.randint(1,diesides)

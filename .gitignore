@@ -1,4 +1,14 @@
-__pycache__/*
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution/Packaging
 __pycache__
-pythia/tables/evank.py
-pythia/tables/moh.py
+*.egg-info/
+# Development environment
+.direnv
+.venv
+
+# SECRET!
+**/evank.py

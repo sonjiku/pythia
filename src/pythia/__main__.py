@@ -1,13 +1,10 @@
-"""
-pythia
-"""
 import sys
 import argparse
 try:
-    from pythia.tables import evank  # noqa # pylint: disable=unused-import
+    from .tables import evank
 except ImportError:
-    from pythia.tables import badevank as evank  # noqa # pylint: disable=unused-import
-from pythia import util  # noqa # pylint: disable=unused-import
+    from .tables import badevank as evank
+from . import util
 
 ###############################################################################
 # Change "evank" from the line below to the name of your tables file

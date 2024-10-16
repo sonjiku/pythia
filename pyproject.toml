@@ -1,0 +1,82 @@
+[build-system]
+requires = ["setuptools >= 61.0", "setuptools_scm>=8"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pythia"
+dynamic = ["version"]
+description = "Random generator for rpgs and the sort."
+readme = "README.md"
+# license = {file = "LICENSE"}
+license = {text = "MIT License"}
+requires-python = ">=3.12,<3.13"
+keywords = [
+    "pythia",
+    "oracle",
+    "dnd",
+    "trpg",
+    "ttrpg",
+    "generator",
+    "random generator",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Education",
+    "Intended Audience :: End Users/Desktop",
+    "Intended Audience :: Other Audience",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+    "Natural Language :: English",
+    "Operating System :: MacOS",
+    "Operating System :: POSIX: Linux",
+    "Operating System :: POSIX: BSD",
+    "Operating System :: Unix",
+    "Topic :: Games/Entertainment :: Board Games",
+    "Topic :: Games/Entertainment :: Role-Playing",
+    "Topic :: File Formats :: JSON",
+    "Topic :: File Formats :: JSON :: JSON Schema",
+    "Topic :: Utilities",
+    "Typing :: Typed",
+]
+dependencies = [
+    "jq>=1.8.0",
+]
+authors = [
+  {name = "Todd Sonjiku", email = "dev.50nj1ku@erine.email"},
+]
+maintainers = [
+  {name = "Todd Sonjiku", email = "dev.50nj1ku@erine.email"},
+]
+
+# [project.optional-dependancies]
+# gui = ["PyQt5"]
+# cli = [
+#   "rich",
+#   "click",
+# ]
+
+
+[project.urls]
+"Homepage" = "https://github.com/sonjiku/pythia"
+"Documentation" = "https://github.com/sonjiku/pythia/wiki"
+"Source" = "https://github.com/sonjiku/pythia.git"
+"Issues" = "https://github.com/sonjiku/pythia/issues"
+"Changelog" = "https://github.com/sonjiku/pythia/blob/master/CHANGELOG.md"
+
+[project.scripts]
+pythia = "pythia:main"
+
+# [project.entry-points."spam.magical"]
+# tomatoes = "spam:main_tomatoes"
+
+[tool.setuptools_scm]
+
+[tool.uv]
+environments = [
+    "sys_platform == 'darwin'",
+    "sys_platform == 'linux'",
+]
+
