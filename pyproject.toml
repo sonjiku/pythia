@@ -35,9 +35,7 @@ classifiers = [
     "Topic :: Utilities",
     "Typing :: Typed",
 ]
-dependencies = [
-    "jq>=1.8.0",
-]
+dependencies = []
 authors = [
   {name = "Todd Sonjiku", email = "dev.50nj1ku@erine.email"},
 ]
