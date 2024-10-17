@@ -1,18 +1,34 @@
 # PythiaRG
 
-> SOME OF THIS INFO IS OUTDATED. THE PROJECT IS UNDERGOING A REWRITE WHICH WILL MAKE IT WAY EASIER TO CONFIGURE YOUR OWN RANDOM GENERATORS.
+
+> [!IMPORTANT]
+> This project is in beta and through the process of development will probably have major breaking changes.
+
+
+## Table of Contents
+* [Oracle and Random Generator](#PythiaRG#Oracle and Random Generator)
+* [Installation](#PythiaRG#Installation)
+* [Example usage](#PythiaRG#Example usage)
+* [Hacking pythiarg](#PythiaRG#Hacking pythiarg)
+* [FAQ](#PythiaRG#FAQ)
+
 
 ## Oracle and Random Generator
-**pythiarg** is a cli tool that you can use to randomly generate ***stuff*** fast. What kind of stuff can you generate? Pretty much anything.
+**PythiaRG** is a cli tool that you can use to randomly generate ***stuff*** fast. What kind of stuff can you generate? Pretty much anything.
 I made **pythiarg** as a tool to use with my TTRPG games and worldbuilding. 
 IMHO best part about `pythiarg` is how modular it is! PythiaRG doesn't let you "generate" what you want? You can have a look at how easy it is [hacking pythiarg to do your bidding](##Hacking-pythiarg) below.
 
 
 ## Installation
-1. Install with pip
+
+As of 17-10-2024 pythiarg can by installed through `[pip](https://pypi.org/project/pythiarg)`.
+```
+pip install pythiarg
+```
 
 
 ## Example usage
+
 ```
 #>pythiarg evank -p
 
