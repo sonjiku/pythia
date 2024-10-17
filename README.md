@@ -10,13 +10,13 @@
 * [Installation](#Installation)
 * [Example usage](#Example-usage)
 * [Hacking pythiarg](#Hacking-pythiarg)
-* [FAQ](#PythiaRG#FAQ)
+* [FAQ](#FAQ)
 
 
 ## Oracle and Random Generator
 **PythiaRG** is a cli tool that you can use to randomly generate ***stuff*** fast. What kind of stuff can you generate? Pretty much anything.
 I made **pythiarg** as a tool to use with my TTRPG games and worldbuilding. 
-IMHO best part about `pythiarg` is how modular it is! PythiaRG doesn't let you "generate" what you want? You can have a look at how easy it is [hacking pythiarg to do your bidding](##Hacking-pythiarg) below.
+IMHO best part about `pythiarg` is how modular it is! PythiaRG doesn't let you "generate" what you want? You can have a look at how easy it is [hacking pythiarg to do your bidding](#Hacking-pythiarg) below.
 
 
 ## Installation
