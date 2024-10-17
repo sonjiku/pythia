@@ -6,10 +6,10 @@
 
 
 ## Table of Contents
-* [Oracle and Random Generator](#PythiaRG#Oracle and Random Generator)
-* [Installation](#PythiaRG#Installation)
-* [Example usage](#PythiaRG#Example usage)
-* [Hacking pythiarg](#PythiaRG#Hacking pythiarg)
+* [Oracle and Random Generator](#Oracle-and-Random-Generator)
+* [Installation](#Installation)
+* [Example usage](#Example-usage)
+* [Hacking pythiarg](#Hacking-pythiarg)
 * [FAQ](#PythiaRG#FAQ)
 
 
