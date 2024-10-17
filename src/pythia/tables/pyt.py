@@ -105,9 +105,10 @@ preset_potion = [
 ]
 
 preset_hexcrawl = [
+        "\n" +
         "Location: LOCATIONS.\n" +
         "Traits: PLACE-TRAITS.\n" +
-        "Structure: STRUCTURE.\n" +
+        "Structure: STRUCTURES.\n" +
         "Hazard: TRAVEL-HAZARDS.\n"
 ]
 
@@ -389,7 +390,7 @@ list_travelShifts = [
     "WEAPONS rain",
 ]
 list_signs = [
-    "HAZARDS",
+    "HHAZARDS",
     "CLOTHING",
     "ELEMENTS trail",
     "FABRICS scrap",
@@ -466,9 +467,9 @@ list_structures = [
     "BUILDINGS",
     "Ruined BUILDINGS",
     "DUNGEONS",
-    "Inn: INN-NAMEOneINN-NAMETwo",
+    "Inn: INN-NAME-ONE INN-NAME-TWO",
     "ROOMS",
-    "Trap: TRAP-EFFECTS, HAZARDS, "
+    "Trap: TRAP-EFFECTS, HHAZARDS, "
         + "MECHANISMS",
     "Castle",
     "Keep",
@@ -601,7 +602,7 @@ list_roomDetails = [
     "CLOTHING",
     "FABRICS",
     "FOODS",
-    "HAZARDS",
+    "HHAZARDS",
     "INGREDIENTS",
     "MATERIALS",
     "MECHANISMS",
@@ -2140,7 +2141,7 @@ list_cityThemes = [
     # Random Food
     "FOODS",
     # Random Hazard
-    "HAZARDS",
+    "HHAZARDS",
     # Random MagicSchool
     "MAGIC-SCHOOLS",
     # Random Mutation
@@ -2278,7 +2279,7 @@ list_streetDetails = [
     # Random Building
     "BUILDINGS",
     # Random Hazard
-    "HAZARDS",
+    "HHAZARDS",
     # Random MiscItems
     "MISC-ITEMS",
     # Random PlaceTrait
@@ -3964,7 +3965,7 @@ list_weaknesses = [
     # Random Food
     "FOODS",
     # Random Hazard
-    "HAZARDS",
+    "HHAZARDS",
     # Random Ingredient
     "INGREDIENTS",
     # Random Location
@@ -4078,7 +4079,7 @@ TABLES = {
     "TRAITS-FOOD": list_foodTraits,
     "FORMS": list_forms,
     "GOALS": list_goals,
-    "HAZARDS": list_hazards,
+    "HHAZARDS": list_hazards,
     "INGREDIENTS": list_ingredients,
     "INN-NAME-ONE": list_innNameOne,
     "INN-NAME-TWO": list_innNameTwo,
