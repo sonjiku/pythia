@@ -30,13 +30,8 @@ classifiers = [
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.12",
     "Natural Language :: English",
-    "Operating System :: MacOS",
-    "Operating System :: POSIX: Linux",
-    "Operating System :: Unix",
     "Topic :: Games/Entertainment :: Board Games",
     "Topic :: Games/Entertainment :: Role-Playing",
-    "Topic :: File Formats :: JSON",
-    "Topic :: File Formats :: JSON :: JSON Schema",
     "Topic :: Utilities",
     "Typing :: Typed",
 ]
