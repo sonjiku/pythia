@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools >= 61.0", "setuptools_scm>=8"]
+requires = ["setuptools >= 61.0", "setuptools_scm>=8", "twine"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -64,7 +64,7 @@ maintainers = [
 "Documentation" = "https://github.com/sonjiku/pythia/wiki"
 "Source" = "https://github.com/sonjiku/pythia.git"
 "Issues" = "https://github.com/sonjiku/pythia/issues"
-"Changelog" = "https://github.com/sonjiku/pythia/blob/master/CHANGELOG.md"
+"Changelog" = "https://github.com/sonjiku/pythia/blob/main/CHANGELOG.md"
 
 [project.scripts]
 pythia = "pythia:main"
@@ -79,4 +79,7 @@ environments = [
     "sys_platform == 'darwin'",
     "sys_platform == 'linux'",
 ]
+
+[tool.uv.workspace]
+members = ["src/pythia/tables"]
 

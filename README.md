@@ -1,5 +1,7 @@
 # Pythia
 
+> SOME OF THIS INFO IS OUTDATED. THE PROJECT IS UNDERGOING A REWRITE WHICH WILL MAKE IT WAY EASIER TO CONFIGURE YOUR OWN RANDOM GENERATORS.
+
 ## Oracle and Random Generator
 **Pythia** is a cli tool that you can use to randomly generate ***stuff*** fast. What kind of stuff can you generate? Pretty much anything.
 I made **pythia** as a tool to use with my TTRPG games and worldbuilding. 

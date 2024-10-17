@@ -4,8 +4,8 @@ __pycache__/
 *$py.class
 
 # Distribution/Packaging
-__pycache__
 *.egg-info/
+dist/
 # Development environment
 .direnv
 .venv

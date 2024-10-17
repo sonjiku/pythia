@@ -20,19 +20,13 @@
                         pkgs.bashInteractive
                     ];
                     shellHook = ''
-                        if [ ! -f .python-version ]; then
-                            echo "Initializing dir with uv"
-                            uv init
-                        fi
-                        if [ -f .venv ]; then
-                            echo "Found .venv."
-                        else
-                            uv sync --frozen
-                        fi
+                        export alias venventer="source .venv/bin/activate"
                     '';
 
                 };
                 # source .venv/bin/activate
+                # You should run `uv init` to initialize the package
+                # `uv sync --frozen` is useful as well
             }
         );
 }
