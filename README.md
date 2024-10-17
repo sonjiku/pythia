@@ -9,15 +9,12 @@ IMHO best part about `pythia` is how modular it is! Pythia doesn't let you "gene
 
 
 ## Installation
-1. Install Python
-1. Download and extract this repository.
-1. Open a command prompt on the directory of the project.
-1. Run `python -m pythia` to find out the options you can use
+1. Install with pip
 
 
 ## Example usage
 ```
-#>python -m pythia evank -p
+#>pythia evank -p
 
 =========
 AVAILABLE PRESETS
@@ -30,7 +27,7 @@ AVAILABLE PRESETS
 =========
 
 
-#>python -m pythia evank -p presetCustomPotion
+#>pythia evank -p presetCustomPotion
 
 Custom Potion Recipe: 
 Ingredients: 6 Last breath, 5 Killer’s hand, 5 Larkspur, 2 Witch hazel
@@ -41,7 +38,7 @@ Taste: Sulphur
 Texture: Frigid
 
 
-#>python -m pythia evank -p 1
+#>pythia evank -p 1
 
 Food: Undercooked Orange
 ```
