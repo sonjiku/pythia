@@ -1,11 +1,11 @@
-# Pythia
+# PythiaRG
 
 > SOME OF THIS INFO IS OUTDATED. THE PROJECT IS UNDERGOING A REWRITE WHICH WILL MAKE IT WAY EASIER TO CONFIGURE YOUR OWN RANDOM GENERATORS.
 
 ## Oracle and Random Generator
-**Pythia** is a cli tool that you can use to randomly generate ***stuff*** fast. What kind of stuff can you generate? Pretty much anything.
-I made **pythia** as a tool to use with my TTRPG games and worldbuilding. 
-IMHO best part about `pythia` is how modular it is! Pythia doesn't let you "generate" what you want? You can have a look at how easy it is [hacking pythia to do your bidding](##Hacking-pythia) below.
+**pythiarg** is a cli tool that you can use to randomly generate ***stuff*** fast. What kind of stuff can you generate? Pretty much anything.
+I made **pythiarg** as a tool to use with my TTRPG games and worldbuilding. 
+IMHO best part about `pythiarg` is how modular it is! PythiaRG doesn't let you "generate" what you want? You can have a look at how easy it is [hacking pythiarg to do your bidding](##Hacking-pythiarg) below.
 
 
 ## Installation
@@ -14,7 +14,7 @@ IMHO best part about `pythia` is how modular it is! Pythia doesn't let you "gene
 
 ## Example usage
 ```
-#>pythia evank -p
+#>pythiarg evank -p
 
 =========
 AVAILABLE PRESETS
@@ -27,7 +27,7 @@ AVAILABLE PRESETS
 =========
 
 
-#>pythia evank -p presetCustomPotion
+#>pythiarg evank -p presetCustomPotion
 
 Custom Potion Recipe: 
 Ingredients: 6 Last breath, 5 Killer’s hand, 5 Larkspur, 2 Witch hazel
@@ -38,20 +38,20 @@ Taste: Sulphur
 Texture: Frigid
 
 
-#>pythia evank -p 1
+#>pythiarg evank -p 1
 
 Food: Undercooked Orange
 ```
 
 
-## Hacking Pythia
+## Hacking pythiarg
 ### Why would I want to do this?
-While `pythia` should offer you almost anything that you might need for creating adventures set in a fantasy setting, you might want to use it to generate a character using specific rules from your TTRPG of choice. Maybe you are a Game Master, and want to randomly generate a dungeon for your players to explore, or a musician that can't decide which song they're going to start learning next. Whatever the reason may be, randomness can be very fun -sometimes funny- and very useful for a creative person!
+While `pythiarg` should offer you almost anything that you might need for creating adventures set in a fantasy setting, you might want to use it to generate a character using specific rules from your TTRPG of choice. Maybe you are a Game Master, and want to randomly generate a dungeon for your players to explore, or a musician that can't decide which song they're going to start learning next. Whatever the reason may be, randomness can be very fun -sometimes funny- and very useful for a creative person!
 
 If you are not going to need random **things** often, and specifically **things** that you cannot find already in this software, you may decide it is not really worth your time hacking at this
 
 ### How do I go about doing this?
-Pythia is written in *Python*. Python is an easy to learn programming language but in all honesty you won't be doing any more programming throughout this process than a kid does making a drawing by filling in colouring books. Pythia is written in a way where it is very modular and easy to append to. Just follow this simple recipe:
+pythiarg is written in *Python*. Python is an easy to learn programming language but in all honesty you won't be doing any more programming throughout this process than a kid does making a drawing by filling in colouring books. PythiaRG is written in a way where it is very modular and easy to append to. Just follow this simple recipe:
 1. Make a copy of `template.py`.
 1. Rename the file to something better and easily memorable.
 1. Make your tables inside of the file by following the instructions.
@@ -76,8 +76,8 @@ Editing `__main__.py` could be ridiculously faster than the other file, dependin
 #### Advanced
 
 ### Tables that point to other tables
-If you follow the instructions in the `template.py` correctly, you should be able to make it so an element of a list points to another list. Due to the way pythia is written, if the element contains a string that matches the **key** of another "table" in your "table of tables", then `pythia` will fetch a random element from that table.
-This can happen an indefinite amount of times and there are no protections to prevent pythia from going into an infinite recursive loop. This will leave her very confused. For your sake, I hope she doesn't get mad at you and lash out on any other programs in memory, though it is unlikely for that to happen.
+If you follow the instructions in the `template.py` correctly, you should be able to make it so an element of a list points to another list. Due to the way pythiarg is written, if the element contains a string that matches the **key** of another "table" in your "table of tables", then `pythiarg` will fetch a random element from that table.
+This can happen an indefinite amount of times and there are no protections to prevent pythiarg from going into an infinite recursive loop. This will leave her very confused. For your sake, I hope she doesn't get mad at you and lash out on any other programs in memory, though it is unlikely for that to happen.
 ### Presets
 Using the previous bit of knowledge, we can create "Presets". For an example you could try running `python __main__.py spyt --preset potionseller` or `python __main__.py spyt --preset character`.
 These two presets are a bit different implementation wise, but they both use the same concept of list elements that point to a random element from another list. Your friend might be happy with your d100 table of surnames, but you can have a dozen different surnames for your vivid character with hopes and dreams during the time it takes for you to roll the dice and look up the result on the table.
@@ -100,18 +100,13 @@ Conditionals and loops can help us make some pretty interesting presets, but if 
 
 
 ## FAQ
->What is pythia?
+>What is PythiarG?
 
-**Pythia** was created to be an *automated oracle*, and random *monster/character/item/city* generator for use with TTRPGs, or anything else really.
+**pythiarg** was created to be an *automated oracle*, and random *monster/character/item/city* generator for use with TTRPGs, or anything else really.
 
 >Who is Pythia?
 
 [Pythia](https://wikipedia.com/wiki/Pythia), **was** the oracle of Delphi. There are few people with that name.
-
->Who is pythia?
-
-This tool I made and use, and decided to share with you. I hope you don't call me a criminal for doing so.
-
 
 >What is an automated oracle?
 
@@ -121,7 +116,7 @@ A glorified random list element selector.
 
 We don't talk about that here.
 
-> While looking at your code/While using `pythia`, I noticed that your available lists are small and so the results predictable. Add more stuff.
+> While looking at your code/While using `pythiarg`, I noticed that your available lists are small and so the results predictable. Add more stuff.
 
 Well you can make a **pull request** if you are so smart and creative yourself.
 

@@ -9,7 +9,7 @@ from . import util
 
 ###############################################################################
 # Change "evank" from the line below to the name of your tables file
-# from pythia.tables import template  # noqa # pylint: disable=unused-import
+# from pythiarg.tables import template  # noqa # pylint: disable=unused-import
 ###############################################################################
 
 
@@ -21,7 +21,7 @@ def create_argument_parser():
     """
     # Description
     parser = argparse.ArgumentParser(
-        description='Pythia: Generate or roll things from TTRPG Tables')
+        description='PythiaRG: Generate or roll things from TTRPG Tables')
     subparsers = parser.add_subparsers(dest='subcommand')
 
     # evank parser Beginning

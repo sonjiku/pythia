@@ -1,5 +1,5 @@
 """
-Pythia!!!
+pythiarg
 """
 
 from . import util
